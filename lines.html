@@ -1,0 +1,119 @@
+<html>
+<script>
+globalarray=new Array();
+
+
+function setupline(divname)
+{
+canvasname=divname+"canvas"
+cantext = "<canvas id=\""+canvasname+"\" width=\"860\" height=\"160\" style=\"border:1px solid #000000;\"></canvas>";
+document.getElementById(divname).innerHTML = cantext;
+document.getElementById(divname).align="center";
+drawmath0(canvasname, parseFloat(prompt('Number of Divisions')),parseFloat(prompt('xmin?')),parseFloat(prompt('xmax?')))
+}
+
+function drawmath0(mathzname, divs,xmin,xmax)
+{
+// save attributes to GLOBAL array
+lastindex=globalarray.length;
+globalarray[lastindex] = [mathzname,divs,xmin,xmax];
+
+
+fontpt=(divs>30?"10px Courier":"20px Courier");
+var c = document.getElementById(mathzname);
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(0,80);
+ctx.lineTo(860,80);
+ctx.stroke();
+
+ctx.moveTo(860,80);
+ctx.lineTo(840,100);
+ctx.stroke();
+
+ctx.moveTo(860,80);
+ctx.lineTo(840,60);
+ctx.stroke();
+
+ctx.moveTo(0,80);
+ctx.lineTo(20,100);
+ctx.stroke();
+
+ctx.moveTo(0,80);
+ctx.lineTo(20,60);
+ctx.stroke();
+
+for(a=0;a<divs+1;a=a+1)
+{
+
+separation=Math.floor(800/divs);
+xdiff=(xmax-xmin)/divs;
+xposition = xmin + xdiff*a;
+picx=a*separation + 30;
+
+ctx.beginPath();
+ctx.moveTo(picx,100);
+ctx.lineTo(picx,60);
+
+ctx.font = fontpt;
+
+
+if(a/2 == Math.floor(a/2)) ctx.strokeStyle = '#000000';
+if(!(a/2 == Math.floor(a/2))) ctx.strokeStyle = '#0000ff';
+if(a/2 == Math.floor(a/2)) ctx.fillStyle = '#000000';
+if(!(a/2 == Math.floor(a/2))) ctx.fillStyle = '#0000ff';
+ctx.fillText(outstring(xposition),picx - numdigits(xposition)*(divs>30?3:6),120 + ((Math.floor(a/2)==a/2)?0:30));
+ctx.stroke();
+}
+}
+
+function outstring(instring)
+{
+dotpos = instring.toString().indexOf(".",0);
+response = ((dotpos +1 > 0)?instring.toString().substring(0,dotpos+6):instring.toString());
+return(response);
+}
+
+function numdigits(a)
+{
+
+counter=0;
+
+if(a != 0)
+{
+a2 = Math.abs(a);
+
+while((a2/Math.floor(a2) != 1) && (counter < 5))
+{
+counter=counter+1;
+a2 = a2*10;
+}
+}
+
+if(counter > 0) counter++;
+
+counter2=1;
+a3 = Math.abs(a);
+
+while((a3 == 10) || (a3 > 10))
+{
+counter2=counter2+1;
+a3 = a3/10;
+}
+
+return(counter2 + counter + ((a<0)?1:0));
+
+}
+
+function testglobalarray()
+{
+alert(globalarray);
+}
+
+</script>
+<div id="firstdiv">Graphic Will Appear Here</div>
+<p onclick="setupline('firstdiv')">Click To Create Number Line</p>
+<div id="nextdiv">Graphic Will Appear Here</div>
+<p onclick="setupline('nextdiv')">Click To Create Number Line</p>
+<p onclick="testglobalarray()">Array Contents</p>
+</html>
