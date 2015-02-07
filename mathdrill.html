@@ -1,0 +1,138 @@
+<html>
+<script>
+// Generate a 1, 2, 3, etc. digit number
+
+function mkdig(n)
+{
+zzout=Math.pow(10,n-1)*Math.floor(Math.random()*9+1);	
+zzout+=Math.floor(Math.random()*(Math.pow(10,n-1)-1));
+return(zzout);
+}
+
+function mkwhole(n)
+{
+return (Math.floor(Math.random()*n)+1);
+}
+</script>
+<body bgcolor="#f0f0f0">
+<hr>
+<font size="5px">
+<b id="zzx"><font color="red">X</font></b><b id="zzx1"><font color="red">X</font></b>THEMATH's Grill and Drill!<b id="zzchk"><font color="#00D000">&#x2713;</font></b><b id="zzchk1"><font color="#00D000">&#x2713;</font></b><br><br>
+<br>Counting Forwards and Backwards:<br>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkdig(1),inmath=parseInt(prompt('What do you get when you count forwards '+x+' from '+y+'?',y)),zzprint=(inmath==(x+y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y))?zzchk.innerHTML:zzx1.innerHTML)+zzecho">
+Counting forwards up to 10 from a 1 digit number.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkdig(2),inmath=parseInt(prompt('What do you get when you count forwards '+x+' from '+y+'?',y)),zzprint=(inmath==(x+y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Counting forwards up to 10 from a 2 digit number.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkdig(3),inmath=parseInt(prompt('What do you get when you count forwards '+x+' from '+y+'?',y)),zzprint=(inmath==(x+y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Counting forwards up to 10 from a 3 digit number.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkdig(2),inmath=parseInt(prompt('What do you get when you count backwards '+x+' from '+y+'?',y)),zzprint=(inmath==(y-x))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(y-x))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Counting backwards up to 10 from a 2 digit number.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkdig(3),inmath=parseInt(prompt('What do you get when you count backwards '+x+' from '+y+'?',y)),zzprint=(inmath==(y-x))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(y-x))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Counting backwards up to 10 from a 3 digit number.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkdig(4),inmath=parseInt(prompt('What do you get when you count backwards '+x+' from '+y+'?',y)),zzprint=(inmath==(y-x))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(y-x))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Counting backwards up to 10 from a 4 digit number.</div>
+
+<br>Whole Numbers - Arithmetic:<br>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+'?',y)),zzprint=(inmath==(x+y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Adding 2 whole numbers both 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+'?',y)),zzprint=(inmath==(x+y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Adding 2 whole numbers both 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100000),y=mkwhole(100000),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+'?',y)),zzprint=(inmath==(x+y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y))?zzchk.innerHTML:innerHTML)+zzecho">
+Adding 2 whole numbers both 100,000 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),inmath=parseInt(prompt('What do you get when you subtract '+x+' from '+(x+y)+'?',(x+y))),zzprint=(inmath==(y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated to adding 2 whole numbers both 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),inmath=parseInt(prompt('What do you get when you subtract '+x+' from '+(x+y)+'?',(x+y))),zzprint=(inmath==(y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated to adding 2 whole numbers both 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100000),y=mkwhole(100000),inmath=parseInt(prompt('What do you get when you subtract '+x+' from '+(x+y)+'?',(x+y))),zzprint=(inmath==(y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated to adding 2 whole numbers both 100,000 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),inmath=parseInt(prompt('What do you get when you multiply '+x+' and '+y+'?',y)),zzprint=(inmath==(x*y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x*y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying two whole numbers both 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),inmath=parseInt(prompt('What do you get when you multiply '+x+' and '+y+'?',y)),zzprint=(inmath==(x*y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x*y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying two whole numbers both 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(1000),y=mkwhole(1000),inmath=parseInt(prompt('What do you get when you multiply '+x+' and '+y+'?',y)),zzprint=(inmath==(x*y))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x*y))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying two whole numbers both 1000 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),inmath=parseInt(prompt('What do you get when you divide '+(y*x)+' by '+y+'?',y)),zzprint=(inmath==(x))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated to multiplying two whole numbers both 10 or less.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),inmath=parseInt(prompt('What do you get when you divide '+(y*x)+' by '+y+'?',y)),zzprint=(inmath==(x))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated to multiplying two whole numbers both 100 or less.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(1000),y=mkwhole(1000),inmath=parseInt(prompt('What do you get when you divide '+(y*x)+' by '+y+'?',y)),zzprint=(inmath==(x))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated to multiplying two whole numbers both 1000 less than.</div>
+
+<br>Three Or More Numbers:<br>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+' and '+z+'?',z)),zzprint=(inmath==(x+y+z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y+z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Adding 3 whole numbers all 10 or less.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+' and '+z+'?',z)),zzprint=(inmath==(x+y+z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y+z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Adding 3 whole numbers all 100 or less.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(10),x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+' and '+z+' and '+w+'?',w)),zzprint=(inmath==(x+y+z+w))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y+z+w))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Adding 4 whole numbers all 10 or less.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(100),x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you add '+x+' and '+y+' and '+z+' and '+w+'?',w)),zzprint=(inmath==(x+y+z+w))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x+y+z+w))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Adding 4 whole numbers all 100 or less.</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you take '+(x+y+z)+' subtract '+x+' and then subtract '+y+'?',y)),zzprint=(inmath==(z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated with adding 3 whole numbers all 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you take '+(x+y+z)+' subtract '+x+' and then subtract '+y+'?',y)),zzprint=(inmath==(z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated with adding 3 whole numbers all 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(10),x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you take '+(w+x+y+z)+' subtract '+x+' and then subtract '+y+' and then minus '+z+'?',z)),zzprint=(inmath==(w))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(w))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated with adding 4 whole numbers all 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(100),x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you take '+(w+x+y+z)+' minus '+x+' and then minus '+y+' and then subtract '+z+'?',z)),zzprint=(inmath==(w))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(w))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Subtraction that is correlated with adding 4 whole numbers all 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you multiply '+x+' by '+y+' by '+z+'?',z)),zzprint=(inmath==(x*y*z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x*y*z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying 3 whole numbers all 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you multiply '+x+' by '+y+' by '+z+'?',z)),zzprint=(inmath==(x*y*z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(x*y*z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying 3 whole numbers all 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(10),x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you multiply '+w+' by '+x+' by '+y+' by '+z+'?',z)),zzprint=(inmath==(w*x*y*z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(w*x*y*z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying 4 whole numbers all 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(100),x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you multiply '+w+' by '+x+' by '+y+' by '+z+'?',z)),zzprint=(inmath==(w*x*y*z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(w*x*y*z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Multiplying 4 whole numbers all 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you take '+(x*y*z)+' divide by '+x+' and then divide by '+y+'?',y)),zzprint=(inmath==(z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated with multiplying 3 whole numbers all 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you take '+(x*y*z)+' divide by '+x+' and then divide by '+y+'?',y)),zzprint=(inmath==(z))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(z))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated with multiplying 3 whole numbers all 100 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(10),x=mkwhole(10),y=mkwhole(10),z=mkwhole(10),inmath=parseInt(prompt('What do you get when you take '+(w*x*y*z)+' divided by '+x+' and then divided by '+y+' and then divided by '+z+'?',z)),zzprint=(inmath==(w))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(w))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated with multiplying 4 whole numbers all 10 or less</div>
+
+<div><input type="button" value="Click Me" onclick="javascript:w=mkwhole(100),x=mkwhole(100),y=mkwhole(100),z=mkwhole(100),inmath=parseInt(prompt('What do you get when you take '+(w*x*y*z)+' divided by '+x+' and then divided by '+y+' and then divided by '+z+'?',z)),zzprint=(inmath==(w))?'YEAH!':'BOO!',alert(zzprint),zzecho=this.parentNode.innerHTML,this.parentNode.innerHTML = ((inmath==(w))?zzchk.innerHTML:zzx.innerHTML)+zzecho">
+Division that is correlated with multiplying 4 whole numbers all 100 or less</div>
+<hr>
+<center><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+</script>
+<!-- Head Of The Ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4171923996401905"
+     data-ad-slot="6096537214"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></center>
