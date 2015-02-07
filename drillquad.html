@@ -1,0 +1,59 @@
+<script>
+document.open();
+</script>
+<script>
+document.write("<body id=\"mainguy\" bgcolor='#E0E0E0'>Please note: the computer may be stupid.  The factors that it gives may be further factorable.  In other words it may give the factor (3x + 6) which can be further factored into 3(x + 2).<br><br>");
+document.write("<p onclick=\"document.getElementById('mainguy').style.background='white'\">Click me to show all</p>");
+
+yy=parseInt(prompt("How many questions?"));
+
+for(xx=0;xx<yy;xx=xx+1)
+{
+a=Math.floor(Math.random()*21)-10;
+b=Math.floor(Math.random()*21)-10;
+c=Math.floor(Math.random()*21)-10;
+d=Math.floor(Math.random()*21)-10;
+
+
+if(a<0)
+{
+a=a*(-1);
+b=b*(-1);
+}
+if(c<0)
+{
+c=c*(-1);
+d=d*(-1);
+}
+
+for(x2=10;x2>1;x2=x2-1)
+{
+if(((a%x2)===0)&&((b%x2)===0)) {a=a/x2,b=b/x2;}
+
+if(((c%x2)===0)&&((d%x2)===0)) {c=c/x2,d=d/x2;}
+}
+
+if(!(a*c===0)&&!(b*d===0))
+{
+document.write("<p>Please factor: ("+a*c+")x<sup>2</sup> + ("+(a*d+b*c)+")x + ("+b*d+")</p>");
+
+document.write("<p onclick=\"document.getElementById('hihi"+xx+"').style.color='black'\"> The answer is (click me): <a id='hihi"+xx+"' style=\"color:#E0E0E0\">[("+a+")x+("+b+")][("+c+")x+("+d+")]</a></p>");
+}
+else
+{
+xx=xx-1;
+}
+
+}
+</script>
+<center><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+</script>
+<!-- Head Of The Ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4171923996401905"
+     data-ad-slot="6096537214"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+document.close();
+</script></center>
