@@ -1,0 +1,115 @@
+<script language="JavaScript" src="bsc3djslib2s.js">
+</script>
+<script>
+pans=parseInt(prompt("how many frames a minute?",600));
+
+changeloc=0.1;
+ndiv=32;
+rdiv=0;
+ndivz=32;
+rdivz=0;
+zzaa=1.0;
+nnn=100;
+xmin=-10.0;
+xmax=10.0;
+ymin=-10.0;
+ymax=10.0;
+strfunc="Math.sin(x) + Math.cos(y)";
+
+if(confirm("Change Settings?"))
+{
+strfunc=prompt("Enter a function of x and y","25/(x*x+y*y+0.0001)");
+xmin = parseFloat(prompt("Enter xmin",-10.0));
+xmax = parseFloat(prompt("Enter xmax",10.0));
+ymin = parseFloat(prompt("Enter ymin",-10.0));
+ymax = parseFloat(prompt("Enter ymax",10.0));
+nnn = parseInt(prompt("Number of divisions of x and number divisions of y (the same currently)",40));
+}
+
+viewerdata = new Array();
+viewerdata[0] = [-20.0,0.0,4.0];
+viewerdata[1] = [1.0,0.0,0.0];
+viewerdata[2] = 1.0;
+
+edges = new Array();
+edges[0] = [-1.0,-1.0,-1.0,-1.0,-1.0,1.0];
+edges[1] = [-1.0,-1.0,-1.0,-1.0,1.0,-1.0];
+for(aaa=0;aaa - 1< nnn;aaa=aaa+1)
+{
+
+zzx0 = aaa/nnn*(xmax - xmin) + xmin;
+
+zzx1 = (aaa+1)/nnn*(xmax - xmin) + xmin;
+
+
+for(bbb=0;bbb - 1< nnn;bbb=bbb+1)
+{
+
+zzy = bbb/nnn*(ymax-ymin)+ymin;
+sfnew = strfunc.replace(/y/g,"("+zzy+")");
+
+edges[aaa*nnn+bbb] = [zzx0,zzy,eval(sfnew.replace(/x/g,"("+zzx0+")")),zzx1,zzy,eval(sfnew.replace(/x/g,"("+zzx1+")"))];
+
+}
+
+}
+
+
+
+
+for(bbb=0;bbb - 1< nnn;bbb=bbb+1)
+{
+
+zzy0= bbb/nnn*(ymax -ymin)+ymin;
+
+zzy1= (bbb+1)/nnn*(ymax -ymin)+ymin;
+
+
+for(aaa=0;aaa - 1< nnn;aaa=aaa+1)
+{
+
+zzx = aaa/nnn*(xmax-xmin) + xmin;
+
+sfnew = strfunc.replace(/x/g,"("+zzx+")");
+
+edges[nnn*nnn + aaa*nnn+bbb] = [zzx,zzy0,eval(sfnew.replace(/y/g,"("+zzy0+")")),zzx,zzy1,eval(sfnew.replace(/y/g,"("+zzy1+")"))];
+
+}
+
+}
+
+
+
+
+
+
+cmdstring=" ";
+
+timerr=setTimeout(function() {gogo()},5000);
+
+function gogo()
+{
+eval(cmdstring);
+plotedges(edges,1);
+// plotfaces(faces,0);
+// plotbird();
+clearTimeout(timerr);
+timerr=setTimeout(function() {gogo()},60000/(pans+1));
+}
+
+</script>
+<body onload="gogo()" onmousedown="cmdstring='viewerdata[0][0]+=changeloc';gogo()" bgcolor="#FFFFFF">
+<table><tr><td>
+<canvas id="cancan" width="600" height="600" style="border:1px solid #000000;">
+</canvas></td><td>
+
+<br><br><input type="button" value="up" onmouseover='cmdstring="viewerdata[0][2]+=changeloc"; gogo()'><br><input type="button" value="down" onmouseover='cmdstring="viewerdata[0][2]-=changeloc"; gogo()'>
+<br>
+<input type="button" value="left" onmouseover='cmdstring="viewerdata[0][1]-=changeloc"; gogo()'><input type="button" value="right" onmouseover='cmdstring="viewerdata[0][1]+=changeloc"; gogo()'>
+
+<br><br><input type="button" value="forward" onmouseover='cmdstring="viewerdata[0][0]+=changeloc"; gogo()'>
+<input type="button" value="twist world" onmouseover="rdiv++; gogo()">
+<input type="button" value="look down" onmouseover="rdivz--; gogo()">
+<br><input type="button" value="backward" onmouseover='cmdstring="viewerdata[0][0]-=changeloc"; gogo()'>
+<input type="button" value="twist world opposite" onmouseover="rdiv--; gogo()">
+<input type="button" value="look up" onmouseover="rdivz++; gogo()"><br><br></td></tr></table>
